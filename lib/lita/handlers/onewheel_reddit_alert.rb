@@ -14,7 +14,8 @@ module Lita
         payload = JSON.parse(r.body)
         payload['data']['children'].each do |element|
           # puts element.inspect
-          response.reply element['data']['selftext']
+          response.reply element['data']['title']
+          response.reply element['data']['url']
         end
         response.reply "Mmmhmm"
       end
